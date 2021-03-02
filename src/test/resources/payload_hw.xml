@@ -6,44 +6,36 @@
         <Groups>
             <Group status="FINISHED" name="topjava">
                 <Users>
-                    <User flag="active" city="kiv">
-                        <email>gmail@gmail.com</email>
+                    <User flag="active" city="kiv" email="gmail@gmail.com">
                         <fullName>Full Name</fullName>
                     </User>
-                    <User flag="superuser" city="spb">
-                        <email>admin@javaops.ru</email>
+                    <User flag="superuser" city="spb" email="admin@javaops.ru">
                         <fullName>Admin</fullName>
                     </User>
-                    <User flag="deleted" city="spb">
-                        <email>mail@yandex.ru</email>
+                    <User flag="deleted" city="spb" email="mail@yandex.ru">
                         <fullName>Deleted</fullName>
                     </User>
                 </Users>
             </Group>
             <Group status="CURRENT" name="masterjava">
                 <Users>
-                    <User flag="superuser" city="spb">
-                        <email>admin@javaops.ru</email>
+                    <User flag="superuser" city="spb" email="admin@javaops.ru">
                         <fullName>Admin</fullName>
                     </User>
-                    <User flag="active" city="mnsk">
-                        <email>demis@gmail.com</email>
+                    <User flag="active" city="mnsk" email="demis@gmail.com">
                         <fullName>Denis Katsuk</fullName>
                     </User>
-                    <User flag="active" city="spb">
-                        <email>mail@yandex.ru</email>
+                    <User flag="active" city="spb" email="mail@yandex.ru">
                         <fullName>Petya</fullName>
                     </User>
                 </Users>
             </Group>
-            <Group status="REGISTERING">
+            <Group status="REGISTERING" name="masterjava">
                 <Users>
-                    <User flag="superuser" city="spb">
-                        <email>admin@javaops.ru</email>
+                    <User flag="superuser" city="spb" email="admin@javaops.ru">
                         <fullName>Admin</fullName>
                     </User>
-                    <User flag="active" city="mglv">
-                        <email>demis@gmail.com</email>
+                    <User flag="active" city="mglv" email="demis@gmail.com">
                         <fullName>Vasya</fullName>
                     </User>
                 </Users>
