@@ -5,7 +5,6 @@
            elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <xs:element name="Payload">
-
         <xs:complexType>
             <xs:sequence minOccurs="1" maxOccurs="1">
                 <xs:element name="Projects">
@@ -22,23 +21,9 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element ref="Users"/>
             </xs:sequence>
-
         </xs:complexType>
-
-<!--        <xs:complexType>-->
-<!--            <xs:all>-->
-<!--                <xs:element name="Cities">-->
-<!--                    <xs:complexType>-->
-<!--                        <xs:sequence minOccurs="1" maxOccurs="unbounded">-->
-<!--                            <xs:element ref="City"/>-->
-<!--                        </xs:sequence>-->
-<!--                    </xs:complexType>-->
-<!--                </xs:element>-->
-<!--                <xs:element ref="Users"/>-->
-<!--            </xs:all>-->
-<!--        </xs:complexType>-->
-
     </xs:element>
 
     <xs:element name="Groups">
@@ -51,8 +36,8 @@
 
     <xs:element name="Group">
         <xs:complexType>
-            <xs:sequence minOccurs="1" maxOccurs="1">
-                <xs:element ref="Users"/>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="UserRef"/>
             </xs:sequence>
             <xs:attribute type="groupStatus" name="status" use="required"/>
             <xs:attribute type="xs:string" name="name" use="required"/>
@@ -67,12 +52,19 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="UserRef">
+        <xs:complexType>
+            <xs:attribute type="xs:IDREF" name="user-ref" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="User">
         <xs:complexType>
             <xs:sequence>
                 <xs:element type="xs:string" name="fullName"/>
             </xs:sequence>
             <xs:attribute type="flagType" name="flag" use="required"/>
+            <xs:attribute type="xs:ID" name="id" use="required"/>
             <xs:attribute type="xs:string" name="email" use="required"/>
             <xs:attribute type="xs:IDREF" name="city" use="required"/>
         </xs:complexType>
