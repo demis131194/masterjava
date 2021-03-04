@@ -1,0 +1,57 @@
+<Payload xmlns="http://javaops.ru"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://javaops.ru payload_hw.xsd">
+
+    <Projects>
+        <Project name="materjava">
+            <Group status="FINISHED" name="materjava01">
+                <UserRef user-ref="dima"/>
+                <UserRef user-ref="admin"/>
+            </Group>
+            <Group status="CURRENT" name="masterjava02">
+                <UserRef user-ref="admin"/>
+                <UserRef user-ref="denis"/>
+                <UserRef user-ref="deleted"/>
+            </Group>
+        </Project>
+        <Project name="topjava">
+            <Group status="CURRENT" name="topjava01">
+                <UserRef user-ref="dima"/>
+                <UserRef user-ref="admin"/>
+                <UserRef user-ref="denis"/>
+            </Group>
+        </Project>
+        <Project name="javabase">
+            <Group status="FINISHED" name="javabase01">
+                <UserRef user-ref="admin"/>
+                <UserRef user-ref="petya"/>
+            </Group>
+        </Project>
+    </Projects>
+    <Cities>
+        <City id="spb">Санкт-Петербург</City>
+        <City id="kiv">Киев</City>
+        <City id="mnsk">Минск</City>
+        <City id="mglv">Могилев</City>
+    </Cities>
+    <Users>
+        <User id="dima" flag="active" city="kiv" email="gmail@gmail.com">
+            <fullName>Dima</fullName>
+        </User>
+        <User id="admin" flag="superuser" city="spb" email="admin@javaops.ru">
+            <fullName>Admin</fullName>
+        </User>
+        <User id="deleted" flag="deleted" city="spb" email="mail@yandex.ru">
+            <fullName>Deleted</fullName>
+        </User>
+        <User id="denis" flag="active" city="mnsk" email="demis@gmail.com">
+            <fullName>Denis Katsuk</fullName>
+        </User>
+        <User id="petya" flag="active" city="spb" email="mail@yandex.ru">
+            <fullName>Petya</fullName>
+        </User>
+        <User id="Vasya" flag="active" city="mglv" email="mail@gmail.com">
+            <fullName>Vasya</fullName>
+        </User>
+    </Users>
+</Payload>

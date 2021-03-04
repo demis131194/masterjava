@@ -20,6 +20,17 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;all>
+ *         &lt;element name="Projects">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence maxOccurs="unbounded">
+ *                   &lt;element ref="{http://javaops.ru}Project"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *         &lt;element name="Cities">
  *           &lt;complexType>
  *             &lt;complexContent>
@@ -31,17 +42,7 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;/complexContent>
  *           &lt;/complexType>
  *         &lt;/element>
- *         &lt;element name="Users">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence maxOccurs="unbounded" minOccurs="0">
- *                   &lt;element ref="{http://javaops.ru}User"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
+ *         &lt;element ref="{http://javaops.ru}Users"/>
  *       &lt;/all>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -57,10 +58,36 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Payload", namespace = "http://javaops.ru")
 public class Payload {
 
+    @XmlElement(name = "Projects", namespace = "http://javaops.ru", required = true)
+    protected Payload.Projects projects;
     @XmlElement(name = "Cities", namespace = "http://javaops.ru", required = true)
     protected Payload.Cities cities;
     @XmlElement(name = "Users", namespace = "http://javaops.ru", required = true)
-    protected Payload.Users users;
+    protected Users users;
+
+    /**
+     * Gets the value of the projects property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Payload.Projects }
+     *     
+     */
+    public Payload.Projects getProjects() {
+        return projects;
+    }
+
+    /**
+     * Sets the value of the projects property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Payload.Projects }
+     *     
+     */
+    public void setProjects(Payload.Projects value) {
+        this.projects = value;
+    }
 
     /**
      * Gets the value of the cities property.
@@ -91,10 +118,10 @@ public class Payload {
      * 
      * @return
      *     possible object is
-     *     {@link Payload.Users }
+     *     {@link Users }
      *     
      */
-    public Payload.Users getUsers() {
+    public Users getUsers() {
         return users;
     }
 
@@ -103,10 +130,10 @@ public class Payload {
      * 
      * @param value
      *     allowed object is
-     *     {@link Payload.Users }
+     *     {@link Users }
      *     
      */
-    public void setUsers(Payload.Users value) {
+    public void setUsers(Users value) {
         this.users = value;
     }
 
@@ -180,8 +207,8 @@ public class Payload {
      * &lt;complexType>
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence maxOccurs="unbounded" minOccurs="0">
-     *         &lt;element ref="{http://javaops.ru}User"/>
+     *       &lt;sequence maxOccurs="unbounded">
+     *         &lt;element ref="{http://javaops.ru}Project"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -192,40 +219,40 @@ public class Payload {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "user"
+        "project"
     })
-    public static class Users {
+    public static class Projects {
 
-        @XmlElement(name = "User", namespace = "http://javaops.ru")
-        protected List<User> user;
+        @XmlElement(name = "Project", namespace = "http://javaops.ru", required = true)
+        protected List<Project> project;
 
         /**
-         * Gets the value of the user property.
+         * Gets the value of the project property.
          * 
          * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the user property.
+         * This is why there is not a <CODE>set</CODE> method for the project property.
          * 
          * <p>
          * For example, to add a new item, do as follows:
          * <pre>
-         *    getUser().add(newItem);
+         *    getProject().add(newItem);
          * </pre>
          * 
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link User }
+         * {@link Project }
          * 
          * 
          */
-        public List<User> getUser() {
-            if (user == null) {
-                user = new ArrayList<User>();
+        public List<Project> getProject() {
+            if (project == null) {
+                project = new ArrayList<Project>();
             }
-            return this.user;
+            return this.project;
         }
 
     }
