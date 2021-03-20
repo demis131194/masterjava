@@ -70,7 +70,7 @@
                 </includes>
             </testResource>
             <testResource>
-                <directory>src/test/r`esources</directory>
+                <directory>src/test/resources</directory>
             </testResource>
         </testResources>
     </build>
