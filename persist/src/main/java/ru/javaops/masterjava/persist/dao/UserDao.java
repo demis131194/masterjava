@@ -29,7 +29,7 @@ public abstract class UserDao implements AbstractDao {
     @Transaction
     public int getSeqAndSkip(int step) {
         int id = getNextVal();
-        DBIProvider.getDBI().useHandle(h -> h.execute("SELECT setval('user_seq', " + (id + step) + ", false)"));
+        DBIProvider.getDBI().useHandle(h -> h.execute("SELECT setval('user_seq', " + (id + step - 1) + ")"));
         return id;
     }
 
