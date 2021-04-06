@@ -16,7 +16,14 @@ public class MailServiceClient {
                 new QName("http://mail.javaops.ru/", "MailServiceImplService"));
 
         MailService mailService = service.getPort(MailService.class);
-        mailService.sendToGroup(ImmutableSet.of(
-                new Addressee("demis131194@mail.ru", null)), Collections.emptySet(), "Subject", "Body");
+
+        String state = mailService.sendToGroup(ImmutableSet.of(new Addressee("demis131194@mail.ru", null)), null,
+                "Group mail subject", "Group mail body");
+        System.out.println("Group mail state: " + state);
+
+        GroupResult groupResult = mailService.sendBulk(ImmutableSet.of(
+                new Addressee("Мастер Java Denis <demis131194@mail.ru>"),
+                new Addressee("Bad Email <bad_email.ru>")), "Bulk mail subject", "Bulk mail body");
+        System.out.println("\nBulk mail groupResult:\n" + groupResult);
     }
 }
